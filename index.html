@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JC Dean App - คณะวารสารศาสตร์และสื่อสารมวลชน</title>
+  <title>ระบบนัดพบคณบดี คณะวารสารศาสตร์และสื่อสารมวลชน (JC DeanApp)</title>
 
   <link rel="icon" href="https://quota.jc.tu.ac.th/images/jc_logo.png" type="image/png">
   
@@ -27,7 +27,6 @@
       font-family: "Noto Sans Thai", sans-serif;
       background-color: #f8f9fa;
       padding-top: 80px; 
-      /* ทำให้ Footer ชิดขอบล่างเสมอ */
       display: flex;
       flex-direction: column;
       min-height: 100vh;
@@ -44,6 +43,13 @@
       background-color: #5a2d6b;
       color: white;
       transform: translateY(-2px);
+    }
+
+    /* Hero Banner */
+    .hero-section {
+      background: linear-gradient(135deg, #ffffff 0%, #f3e9f7 100%);
+      border-left: 6px solid #743d88;
+      border-radius: 16px;
     }
 
     /* Navbar Styles */
@@ -63,22 +69,31 @@
       text-decoration: underline;
     }
 
-    /* Card Hover Effects */
+    /* Card & Step Styles */
     .menu-card {
       border: none;
-      border-radius: 15px;
+      border-radius: 16px;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
       height: 100%;
+      background: #ffffff;
     }
     .menu-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(116, 61, 136, 0.15);
+      box-shadow: 0 12px 24px rgba(116, 61, 136, 0.15);
     }
-    .card-icon {
-      font-size: 3rem;
+    .step-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: #f3e9f7;
       color: #743d88;
-      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin: 0 auto 15px auto;
     }
   </style>
 </head>
@@ -98,9 +113,78 @@
   </nav>
 
   <!-- Main Content -->
-  <main class="container flex-grow-1 my-5">
+  <main class="container flex-grow-1 my-4">
     
-    
+    <!-- Hero Banner Welcoming Section -->
+    <div class="hero-section p-4 p-lg-5 mb-5 shadow-sm">
+      <div class="row align-items-center">
+        <div class="col-lg-8 text-center text-lg-start mb-4 mb-lg-0">
+          <span class="badge bg-theme rounded-pill px-3 py-2 fs-6 mb-3">
+            <i class="fas fa-handshake me-1"></i> สำหรับบุคลากรคณะฯ ทุกท่าน
+          </span>
+          <h2 class="fw-bold text-dark mb-2">ยินดีต้อนรับสู่ระบบนัดพบคณบดี</h2>
+          <h5 class="text-theme fw-normal mb-3">คณะวารสารศาสตร์และสื่อสารมวลชน มหาวิทยาลัยธรรมศาสตร์</h5>
+          <p class="text-muted mb-0 fs-6">
+            ช่องทางสำหรับบุคลากร ในการนัดพบคณบดี 
+            เพื่อขอนัดประชุม ปรึกษา เสนองาน/โครงการ และอื่นๆ อย่างเป็นระบบและสะดวกรวดเร็ว
+          </p>
+        </div>
+        <div class="col-lg-4 text-center">
+          <div class="card border-0 shadow-sm p-3 bg-white rounded-4">
+            <i class="fas fa-calendar-check text-theme mb-2" style="font-size: 3rem;"></i>
+            <h5 class="fw-bold text-dark">พร้อมนัดหมายทันที</h5>
+            <p class="small text-muted mb-3">กดปุ่มด้านล่างเพื่อเข้าสู่ระบบนัดหมาย</p>
+            <a id="menu-2-btn" href="#" class="btn btn-theme btn-lg rounded-pill fw-bold shadow-sm py-2">
+              <i class="fas fa-sign-in-alt me-2"></i>เข้าสู่ระบบนัดพบคณบดี
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Instructions / 3 Simple Steps -->
+    <div class="text-center mb-4">
+      <h4 class="fw-bold text-dark">ขั้นตอนการเข้าใช้งานระบบ</h4>
+      <p class="text-muted">3 ขั้นตอนง่ายๆ ในการขอนัดพบคณบดี</p>
+    </div>
+
+    <div class="row g-4 mb-5">
+      <!-- Step 1 -->
+      <div class="col-md-4">
+        <div class="menu-card p-4 text-center">
+          <div class="step-icon"><i class="fas fa-id-card"></i></div>
+          <h5 class="fw-bold text-dark mb-2">1. เข้าสู่ระบบ</h5>
+          <p class="text-muted small mb-0">
+            กดปุ่มเข้าสู่ระบบ เพื่อยืนยันตัวตนผ่าน TU Account (@tu.ac.th)
+          </p>
+        </div>
+      </div>
+      
+      <!-- Step 2 -->
+      <div class="col-md-4">
+        <div class="menu-card p-4 text-center">
+          <div class="step-icon"><i class="fas fa-clock"></i></div>
+          <h5 class="fw-bold text-dark mb-2">2. เลือกช่วงเวลาและหัวข้อ</h5>
+          <p class="text-muted small mb-0">
+            ระบุรายละเอียดวัตถุประสงค์ในการเข้าพบ พร้อมเลือกวันและช่วงเวลาที่เปิดให้ลงนัดหมาย
+          </p>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="col-md-4">
+        <div class="menu-card p-4 text-center">
+          <div class="step-icon"><i class="fas fa-envelope-open-text"></i></div>
+          <h5 class="fw-bold text-dark mb-2">3. รอการยืนยัน</h5>
+          <p class="text-muted small mb-0">
+            เจ้าหน้าที่จะตรวจสอบข้อมูลและส่งการยืนยันนัดหมายกลับผ่านช่องทางติดต่อที่ท่านให้ไว้
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+
   </main>
 
   <!-- Footer -->
@@ -153,24 +237,27 @@
 
     // --- 2. ตั้งค่าลิงก์สำหรับเมนูต่างๆ ---
     function setupMenuLinks() {
-      // ลิงก์เมนู 1: DASS-21
-      const btn1 = document.getElementById('menu-1-btn');
-      const targetUrl1 = 'https://script.google.com/a/macros/jc.tu.ac.th/s/AKfycbwTyHdZbna6Zv58zx-l_POSYjvUhKHevmMQfdDwxGt041brcyTvA8v_dWIWGTcgdc0fig/exec'; 
 
-      // เช็คและบังคับเปิด Safari หากเป็น iOS + In-App Browser สำหรับเมนู 1
+      // ลิงก์เมนู 2: ระบบนัดหมายคณบดี (JC Dean App)
+      const btn2 = document.getElementById('menu-2-btn');
+      const targetUrl2 = 'https://script.google.com/a/macros/jc.tu.ac.th/s/AKfycbz0QYUcomgjKH7xdqllAShdfXJtw6MGJg5IR4PNnmX3OIuFs6i-bcofltLJBEx9OqkNNw/exec';
+
+      // เช็คและบังคับเปิด Safari หากเป็น iOS + In-App Browser
       if (isIOS() && isInAppBrowser()) {
-        btn1.href = 'x-safari-' + targetUrl1;
+        if(btn1) btn1.href = 'x-safari-' + targetUrl1;
         if(btn2) btn2.href = 'x-safari-' + targetUrl2;
       } else {
-        btn1.href = targetUrl1;
+        if(btn1) btn1.href = targetUrl1;
         if(btn2) btn2.href = targetUrl2;
       }
     }
 
-    // --- 3. การทำงานเมื่อกดปุ่มเมนู (สร้างฟังก์ชันให้ใช้ซ้ำได้) ---
+    // --- 3. การทำงานเมื่อกดปุ่มเมนู ---
     function handleMenuClick(e) {
       e.preventDefault(); 
       const targetUrl = this.href; 
+
+      if (!targetUrl || targetUrl === '#') return;
 
       // แสดง Loading อนิเมชัน
       Swal.fire({
@@ -184,20 +271,20 @@
         }
       });
 
-      // หน่วงเวลา 600ms แล้ว Redirect
+      // หน่วงเวลา 600ms แล้ว Redirect ไปที่ Apps Script
       setTimeout(() => {
         window.location.href = targetUrl;
       }, 600);
     }
 
     // ผูก Event การคลิกให้กับปุ่มเมนู 1 และ 2
-    document.getElementById('menu-1-btn').addEventListener('click', handleMenuClick);
-    const menu2Btn = document.getElementById('menu-2-btn');
-    if(menu2Btn) {
-      menu2Btn.addEventListener('click', handleMenuClick);
-    }
+    const menu1Btn = document.getElementById('menu-1-btn');
+    if(menu1Btn) menu1Btn.addEventListener('click', handleMenuClick);
 
-    // --- 4. การทำงานเมื่อกดปุ่มที่ยังไม่พร้อมใช้งาน (เมนู 3) ---
+    const menu2Btn = document.getElementById('menu-2-btn');
+    if(menu2Btn) menu2Btn.addEventListener('click', handleMenuClick);
+
+    // --- 4. การทำงานเมื่อกดปุ่มที่ยังไม่พร้อมใช้งาน ---
     const pendingBtns = document.querySelectorAll('.btn-pending');
     pendingBtns.forEach(btn => {
       btn.addEventListener('click', function(e) {
@@ -219,7 +306,7 @@
 
     // เรียกใช้งานเมื่อโหลดหน้าเสร็จ
     document.addEventListener("DOMContentLoaded", () => {
-      setupMenuLinks(); // เปลี่ยนชื่อฟังก์ชันเป็น setupMenuLinks
+      setupMenuLinks();
     });
   </script>
 </body>
